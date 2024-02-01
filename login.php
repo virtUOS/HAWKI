@@ -37,10 +37,10 @@
 	  
 	  ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 
-	  if (($link = ldap_bind($connection, $base_dn, $bind_pw)) == false) {
+	 /* if (($link = ldap_bind($connection, $base_dn, $bind_pw)) == false) {
 		print "Fehler: Bind fehlgeschlagen<br>";
 		return false;
-	  }
+	  }*/
 
 	  $sanitizedUsername = ldap_escape($username, "", LDAP_ESCAPE_FILTER);
 
@@ -67,8 +67,14 @@
 		return false;
 	  }
 
+	  if (($result = ldap_search($connection, $search_dn, $filter)) == false) {
+		print "Fehler: Suche im LDAP-Baum fehlgeschlagen<br>";
+		return false;
+	  }
+
 	  $info = ldap_get_entries($connection, $result);
 	  $userinfo = $info[0];
+	  # var_dump($userinfo);
 	  if (isset($userinfo["displayname"])) {
 		// Attribute displayname is set, expect to be comma separated names =>
 		// extract first characters
