@@ -104,7 +104,7 @@ if (!isset($_SESSION['username'])) {
 	  <a href="#" id="feedback" onclick="load(this, 'userpost.php')">Feedback</a>
 	  <a href="logout.php">Abmelden</a>
 	  <br>
-	  <a href="#" onclick="load(this, 'datenschutz.htm')">Datenschutz</a>
+	  <a href="/datenschutz" target="_blank">Datenschutz</a>
 	  <a href="/impressum" target="_blank">Impressum</a>
 	</div>
   </div>
