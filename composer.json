@@ -1,4 +1,9 @@
 {
+    "config": {
+		"platform": {
+			"php": "^7.2"
+		}
+	},
     "require": {
         "jumbojett/openid-connect-php": "^0.9.10"
     }
