@@ -324,7 +324,7 @@ if (!isset($_SESSION['username'])) {
 		document.querySelector('.limitations')?.remove();
 		
 		const requestObject = {};
-		requestObject.model = 'gpt-4-turbo';
+		requestObject.model = 'gpt-4';
 		requestObject.stream = true;
 		requestObject.messages = [];
 		const messageElements = messagesElement.querySelectorAll(".message");
